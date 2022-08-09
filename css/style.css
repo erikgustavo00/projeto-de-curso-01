@@ -12,13 +12,14 @@ html,body{
     src: url('../open_sans/static/OpenSans/OpenSans-Light.ttf');
 }
 .center{
-    max-width: 1280px;
+    max-width: 1260px;
     margin:0 auto;
     padding:0 2%;
 }
 .clear{
     clear: both;
 }
+/* aqui começa a header */
 header{
     min-width: 100%;
     height: 60px;
@@ -28,10 +29,10 @@ header{
 header img {
     margin: 19px;
 }
+/* aqui acaba  header e começa a section banner */
 section.banner{
+    
     width: 100%;
-    min-width: 100%;
-    height: 657px;
     background-image: url('../images/header_bg.png');
     background-size:cover ;
     background-position: center;
@@ -39,16 +40,21 @@ section.banner{
 section.banner > .center{
     height: 100%;
 }
- .form{
-    width:31.25% ;
-    height: calc(100% + 30px);
-    background-color: white;
-    float: right;
-    border: 8px solid rgba(120,120,120,0.7);
+.banner-section{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
     position: relative;
-    top: -3%;
+}
+/* formulario do banner  */
+ .banner-section .form{
+    width: 40% ;
+    height: 100% ;
+    background-color: white;
+    border: 8px solid rgba(120,120,120,0.7);
     padding: 10px;
     background-clip: padding-box;
+   
 }
 
 .form h2{
@@ -80,22 +86,25 @@ section.banner > .center{
     margin:20px 0px  ;
 }
 input[type=submit]{
-    width: 200px;
+    width: 70%;
     height: 70px;
     background-color:rebeccapurple;
     display: inline-block;
     color: white;
     font-size:30px ;
     margin-top:2px ;
+    cursor: pointer;
 }
 .submit-conteiner{
    text-align: center;
+   
 }
+/* aqui comoça a lista */
 .container-list{
     padding: 60px 30px;
     margin-top: 120px;
-    float: left;
-    width: 619px;
+    max-width: 50%;
+    width: 100%;
     height: 270px;
     background-color: rgb(33,35,67,0.7);
 }
@@ -115,11 +124,16 @@ input[type=submit]{
     font-weight: normal;
 }
 .section-2 p{
-    width: 628px;
     text-align: justify;
     display: inline-block;
     margin: 0 auto;
     padding: 20px 0;
+}
+.info{
+    width: 100%;
+    max-width:628px ;
+    text-align: center;
+    margin: 0 auto;
 }
 .arrow{
     position: relative;
@@ -141,22 +155,20 @@ input[type=submit]{
 .content-section{
     text-align: center;
     margin-top: 60px;
-   
-   
-   
+    display: flex;
+    
 }
  .content{
-    float: left;
-    width: 33%;
-     
+    width: 33.333%;
+    margin: 30px; 
  }
     
  .content img{
      width: 70px;
  }
 .content p {
-    padding: 20px 70px;
     text-align: justify;
+    padding: 2%;
 }
 .content h2{
     padding-top: 10px
@@ -166,3 +178,43 @@ input[type=submit]{
     padding:20px;
     text-align: center;
 }
+ @media screen and (max-width:900px) {
+    .header{
+        text-align: center;
+    }
+    .banner-section{
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    section.banner{
+        height: auto;
+        padding: 0;
+    }
+    .container-list{
+        max-width: 100%;
+        width: 100%;
+        margin:10px 0;
+        
+        padding:  60px 10px;
+      
+    }
+    .form{
+        text-align: center;
+        margin: 10px;
+        min-width: 100%;
+    }
+    
+ }
+ @media screen and (max-width:768px){
+    .content-section{
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .content{
+        width: 100%;
+    }
+ }
